@@ -1,0 +1,185 @@
+{
+    "id": "f24871d6-463b-4b95-8f97-cd02c7d5ac6a",
+    "serviceId": "lic-integrator",
+    "requestId": "b9820956-f545-4394-b089-5f2f76ffbf63",
+    "requestType": "EGRUL",
+    "xsltId": 8,
+    "clientInternalNumber": "Л-847",
+    "responseId": "f59eadc3-70f2-11ef-bb4d-005056ad2970",
+    "messageId": "f9efd7d4-71f2-11ef-bca3-f20ea54dde76",
+    "requestContent": {
+        "requestId": "b9820956-f545-4394-b089-5f2f76ffbf63",
+        "innUl": "3023010441"
+    },
+    "requestTimestamp": "2024-10-06T13:30:59.123+0300",
+    "updateTimestamp": "2024-10-06T13:32:41.799+0300",
+    "responseContent": {
+        "svUL": {
+            "dateVyp": "2024-09-24",
+            "ogrn": "1153025006452",
+            "dateOgrn": "2015-10-29",
+            "inn": "7841051711",
+            "kpp": "770102001",
+            "sprOPF": "ОКОПФ",
+            "codeOPF": "12300",
+            "fullNameOPF": "Общества с ограниченной ответственностью",
+            "svNameUL": {
+                "nameULFull": "АО «ЦентрИнформ»",
+                "nameULShort": "АО «ЦентрИнформ»",
+                "grnDate": {
+                    "grn": "1153025006452",
+                    "dateNote": "2015-10-29"
+                },
+                "svNameULShort": {
+                    "nameShort": "ООО \"АСТРАХАНСКИЕ НАПИТКИ\"",
+                    "grnDate": {
+                        "grn": "1153025006452",
+                        "dateNote": "2015-10-29"
+                    }
+                }
+            },
+            "svAddressUL": {
+                "svAdrULFIAS": {
+                    "idNum": "6f36708f-925c-445e-a788-bc1299d4a284",
+                    "index": "414042",
+                    "region": "30",
+                    "nameRegion": "АСТРАХАНСКАЯ ОБЛАСТЬ",
+                    "municipRayon": {
+                        "vidCode": "2",
+                        "name": "ГОРОД АСТРАХАНЬ"
+                    },
+                    "naselenPunkt": {
+                        "vid": "Г",
+                        "name": "АСТРАХАНЬ"
+                    },
+                    "elUlDorSety": {
+                        "type": "УЛ",
+                        "name": "МОСИНА"
+                    },
+                    "zdanie": {
+                        "type": "ЗД.СТР.",
+                        "number": "1А11"
+                    },
+                    "grnDate": {
+                        "grn": "2243000212321",
+                        "dateNote": "2024-09-24"
+                    }
+                },
+                "addressRF": {
+                    "index": "414042",
+                    "codeRegion": "30",
+                    "codeAddrKladr": "300000010001143",
+                    "dom": "ЗД. 1А",
+                    "corpus": "СТР. 11",
+                    "kvart": "",
+                    "gorod": {
+                        "typeGorod": "Г.",
+                        "nameGorod": "АСТРАХАНЬ"
+                    },
+                    "ulica": {
+                        "typeUlica": "УЛ.",
+                        "nameUlica": "МОСИНА"
+                    },
+                    "grnDate": {
+                        "grn": "2243000212321",
+                        "dateNote": "2024-09-24"
+                    }
+                }
+            },
+            "svStatus": [],
+            "svUstCap": {
+                "nameVidCap": "УСТАВНЫЙ КАПИТАЛ",
+                "sumCap": "30000",
+                "grnDate": {
+                    "grn": "1153025006452",
+                    "dateNote": "2015-10-29"
+                }
+            },
+            "svDolzhnFL": {
+                "grnDatePerv": {
+                    "grn": "1153025006452",
+                    "dateNote": "2015-10-29"
+                },
+                "svFL": {
+                    "lastName": "ШЕВЯКОВ",
+                    "firstName": "АЛЕКСАНДР",
+                    "patronymic": "ВИКТОРОВИЧ",
+                    "innFL": "631600562200",
+                    "grnDate": {
+                        "grn": "2173025088157",
+                        "dateNote": "2017-04-01"
+                    }
+                },
+                "svDolzhn": {
+                    "vidDolzhn": "02",
+                    "nameVidDolzhn": "Руководитель юридического лица",
+                    "nameDolzhn": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР",
+                    "grnDate": {
+                        "grn": "2173025088157",
+                        "dateNote": "2017-04-01"
+                    }
+                }
+            },
+            "svUcheredit": {
+                "uchrFL": [
+                    {
+                        "grnDatePerv": {
+                            "grn": "1153025006452",
+                            "dateNote": "2015-10-29"
+                        },
+                        "svFL": {
+                            "lastName": "КОТОВ",
+                            "firstName": "АЛЕКСАНДР",
+                            "patronymic": "СЕРГЕЕВИЧ",
+                            "innFL": "631600077524",
+                            "grnDate": {
+                                "grn": "1153025006452",
+                                "dateNote": "2015-10-29"
+                            }
+                        }
+                    },
+                    {
+                        "grnDatePerv": {
+                            "grn": "1153025006452",
+                            "dateNote": "2015-10-29"
+                        },
+                        "svFL": {
+                            "lastName": "ШЕВЯКОВ",
+                            "firstName": "АЛЕКСАНДР",
+                            "patronymic": "ВИКТОРОВИЧ",
+                            "innFL": "631600562200",
+                            "grnDate": {
+                                "grn": "2233000131990",
+                                "dateNote": "2023-09-28"
+                            }
+                        }
+                    },
+                    {
+                        "grnDatePerv": {
+                            "grn": "1153025006452",
+                            "dateNote": "2015-10-29"
+                        },
+                        "svFL": {
+                            "lastName": "АДЫРХАЕВ",
+                            "firstName": "АЛЕКСАНДР",
+                            "patronymic": "ГЕОРГИЕВИЧ",
+                            "innFL": "631927528623",
+                            "grnDate": {
+                                "grn": "2233000131990",
+                                "dateNote": "2023-09-28"
+                            }
+                        }
+                    }
+                ]
+            },
+            "svPredshes": []
+        }
+    },
+    "kafkaPartition": 7,
+    "kafkaOffset": 126703,
+    "route": "OUT",
+    "attachmentPath": "/mnt/leveler/storage/2023-11-02/715b4140-6cab-480c-bffb-dbd654f4a6de/VO_RUGFO_0000_9965_20240925_7222ae7a-42e8-4c11-8a08-22fc7879d57c.zip",
+    "state": "OUTGOING",
+    "archivedStatus": true,
+    "queuedStatus": true
+}

@@ -1,0 +1,5 @@
+2024-10-13 21:51:56.423 [info] update#setState idle
+2024-10-13 21:52:26.425 [info] update#setState checking for updates
+2024-10-13 21:52:26.429 [info] update#setState available for download
+2024-10-13 21:52:44.225 [info] Extension host with pid 161305 exited with code: 0, signal: unknown.
+2024-10-13 21:53:07.323 [info] Extension host with pid 161891 exited with code: 0, signal: unknown.

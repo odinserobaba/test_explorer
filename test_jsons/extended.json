@@ -1,0 +1,573 @@
+{
+    "availableChecks": [
+        {
+            "code": 2002,
+            "apiOrder": 1020,
+            "name": "Экспертиза документов",
+            "groupCode": 900,
+            "upload": false,
+            "delete": true,
+            "deleteGenerated": true,
+            "cluster": {
+                "id": 1,
+                "code": 1001,
+                "mean": "check",
+                "description": "Проверка"
+            },
+            "examDoc": true,
+            "automatic": false,
+            "newGroupCode": 3,
+            "newGroupName": "Проверка оснований для приостановки рассмотрения заявления о выдаче (продлении / переоформлении / прекращении) лицензии"
+        },
+        {
+            "code": 1027,
+            "apiOrder": 1090,
+            "name": "Отзыв заявления о выдаче, продлении, переоформлении",
+            "groupCode": 900,
+            "upload": true,
+            "delete": true,
+            "deleteGenerated": true,
+            "cluster": {
+                "id": 2,
+                "code": 1002,
+                "mean": "cancel",
+                "description": "Отмена"
+            },
+            "examDoc": false,
+            "automatic": false,
+            "newGroupCode": 2,
+            "newGroupName": "Проверка оснований для отказа в рассмотрении заявления о выдаче (продлении / переоформлении / прекращении) лицензии"
+        }
+    ],
+    "availableRequestTypes": [],
+    "canBeGenerated": false,
+    "requestId": 225358,
+    "inn": "7841051711",
+    "organization": "ООО \"Тестирование\"",
+    "orgBriefName": "ООО \"Тестирование\"",
+    "orgFullName": "ООО \"Успешный тест\"",
+    "deloNum": "ПХП-СХП-10852",
+    "dateInsert": "2024-09-26T15:04:20.612972",
+    "dateChange": "2024-09-26T15:04:20.612972",
+    "checks": [
+        {
+            "checkId": 114811,
+            "requestId": 225358,
+            "dateInsert": "2024-09-26T15:04:20.612972",
+            "dateFinish": "2024-09-26T15:04:20.638438",
+            "code": 1015,
+            "apiOrder": 1001,
+            "name": "Поступление заявления о выдаче (продлении/переоформлении/возобновлении/прекращении)",
+            "groupCode": 900,
+            "upload": false,
+            "delete": true,
+            "deleteGenerated": true,
+            "cluster": {
+                "id": 1,
+                "code": 1001,
+                "mean": "check",
+                "description": "Проверка"
+            },
+            "examDoc": false,
+            "automatic": false,
+            "newGroupCode": null,
+            "newGroupName": null,
+            "checkStatus": {
+                "code": 2010,
+                "initial": true,
+                "finished": true,
+                "result": true,
+                "autoProcess": false,
+                "description": "Зарегистрировано"
+            },
+            "autoStart": true,
+            "error": false,
+            "newGroupCode": 1,
+            "newGroupName": "Поступление заявления о выдаче (продлении / переоформлении / прекращении) лицензии"
+        },
+        {
+            "checkId": 114813,
+            "requestId": 225358,
+            "dateInsert": "2024-09-26T15:04:20.612972",
+            "code": 2016,
+            "apiOrder": 1002,
+            "name": "Запрос на проверку государственной регистрации ЮЛ",
+            "groupCode": 200,
+            "upload": false,
+            "delete": true,
+            "deleteGenerated": true,
+            "cluster": {
+                "id": 1,
+                "code": 1001,
+                "mean": "check",
+                "description": "Проверка"
+            },
+            "examDoc": false,
+            "automatic": true,
+            "newGroupCode": null,
+            "newGroupName": null,
+            "checkStatus": {
+                "code": 3005,
+                "initial": false,
+                "finished": false,
+                "autoProcess": true,
+                "description": "Запрос направлен"
+            },
+            "nextStatuses": [],
+            "autoStart": true,
+            "error": false,
+            "newGroupCode": 3,
+            "newGroupName": "Проверка оснований для приостановки рассмотрения заявления о выдаче (продлении / переоформлении / прекращении) лицензии"
+        },
+        {
+            "checkId": 114814,
+            "requestId": 225358,
+            "dateInsert": "2024-09-26T15:04:20.612972",
+            "code": 2017,
+            "apiOrder": 1003,
+            "name": "Запрос на проверку статуса ЮЛ",
+            "groupCode": 200,
+            "upload": false,
+            "delete": true,
+            "deleteGenerated": true,
+            "cluster": {
+                "id": 1,
+                "code": 1001,
+                "mean": "check",
+                "description": "Проверка"
+            },
+            "examDoc": false,
+            "automatic": true,
+            "newGroupCode": null,
+            "newGroupName": null,
+            "checkStatus": {
+                "code": 3008,
+                "initial": true,
+                "finished": false,
+                "autoProcess": true,
+                "description": "Запланировано"
+            },
+            "nextStatuses": [],
+            "autoStart": true,
+            "error": false,
+            "newGroupCode": 2,
+            "newGroupName": "Проверка оснований для отказа в рассмотрении заявления о выдаче (продлении / переоформлении / прекращении) лицензии"
+        },
+        {
+            "checkId": 114815,
+            "requestId": 225358,
+            "dateInsert": "2024-09-26T15:04:20.612972",
+            "code": 2019,
+            "apiOrder": 1005,
+            "name": "Запрос на проверку постановки ЮЛ на учет в налоговом органе",
+            "groupCode": 200,
+            "upload": false,
+            "delete": true,
+            "deleteGenerated": true,
+            "cluster": {
+                "id": 1,
+                "code": 1001,
+                "mean": "check",
+                "description": "Проверка"
+            },
+            "examDoc": false,
+            "automatic": true,
+            "newGroupCode": null,
+            "newGroupName": null,
+            "checkStatus": {
+                "code": 3008,
+                "initial": true,
+                "finished": false,
+                "autoProcess": true,
+                "description": "Запланировано"
+            },
+            "nextStatuses": [],
+            "autoStart": true,
+            "error": false,
+            "newGroupCode": 3,
+            "newGroupName": "Проверка оснований для приостановки рассмотрения заявления о выдаче (продлении / переоформлении / прекращении) лицензии"
+        },
+        {
+            "checkId": 114810,
+            "requestId": 225358,
+            "dateInsert": "2024-09-26T15:04:20.612972",
+            "dateFinish": "2024-09-26T15:07:49.218206",
+            "code": 2020,
+            "apiOrder": 1006,
+            "name": "Запрос на проверку регистрации права пользования объектом недвижимости",
+            "groupCode": 200,
+            "upload": false,
+            "delete": true,
+            "deleteGenerated": true,
+            "cluster": {
+                "id": 1,
+                "code": 1001,
+                "mean": "check",
+                "description": "Проверка"
+            },
+            "examDoc": false,
+            "automatic": true,
+            "newGroupCode": null,
+            "newGroupName": null,
+            "checkStatus": {
+                "code": 2002,
+                "initial": false,
+                "finished": true,
+                "result": true,
+                "autoProcess": false,
+                "description": "Положительное решение"
+            },
+            "attach": [
+                {
+                    "id": 86565,
+                    "ext": "pdf",
+                    "generated": false,
+                    "type": {
+                        "code": 0,
+                        "name": "Не определено",
+                        "signed": false
+                    },
+                    "fileName": "запрос от 26-09-2024 15:04:20.pdf"
+                }
+            ],
+            "autoStart": true,
+            "error": false,
+            "newGroupCode": 2,
+            "newGroupName": "Проверка оснований для отказа в рассмотрении заявления о выдаче (продлении / переоформлении / прекращении) лицензии"
+        },
+        {
+            "checkId": 114808,
+            "requestId": 225358,
+            "dateInsert": "2024-09-26T15:04:20.612972",
+            "dateFinish": "2024-09-26T15:04:56.424611",
+            "code": 1021,
+            "apiOrder": 1007,
+            "name": "Запрос на проверку отсутствия налоговой задолженности",
+            "groupCode": 200,
+            "upload": false,
+            "delete": true,
+            "deleteGenerated": true,
+            "cluster": {
+                "id": 1,
+                "code": 1001,
+                "mean": "check",
+                "description": "Проверка"
+            },
+            "examDoc": false,
+            "automatic": false,
+            "newGroupCode": null,
+            "newGroupName": null,
+            "checkStatus": {
+                "code": 2002,
+                "initial": false,
+                "finished": true,
+                "result": true,
+                "autoProcess": true,
+                "description": "Положительное решение"
+            },
+            "attach": [
+                {
+                    "id": 86560,
+                    "ext": "pdf",
+                    "generated": false,
+                    "type": {
+                        "code": 0,
+                        "name": "Не определено",
+                        "signed": false
+                    },
+                    "fileName": "запрос от 26-09-2024 15:04:20.pdf"
+                },
+                {
+                    "id": 86561,
+                    "ext": "pdf",
+                    "generated": false,
+                    "type": {
+                        "code": 0,
+                        "name": "Не определено",
+                        "signed": false
+                    },
+                    "fileName": "запрос от 26-09-2024 15:04:20.pdf"
+                }
+            ],
+            "autoStart": true,
+            "error": false,
+            "newGroupCode": 3,
+            "newGroupName": "Проверка оснований для приостановки рассмотрения заявления о выдаче (продлении / переоформлении / прекращении) лицензии"
+        },
+        {
+            "checkId": 114817,
+            "requestId": 225358,
+            "dateInsert": "2024-09-26T15:04:20.612972",
+            "dateFinish": "2024-09-26T15:05:30.693073",
+            "code": 2022,
+            "apiOrder": 1008,
+            "name": "Запрос на проверку наличия/отсутствия штрафов",
+            "groupCode": 200,
+            "upload": false,
+            "delete": true,
+            "deleteGenerated": true,
+            "cluster": {
+                "id": 1,
+                "code": 1001,
+                "mean": "check",
+                "description": "Проверка"
+            },
+            "examDoc": false,
+            "automatic": true,
+            "newGroupCode": null,
+            "newGroupName": null,
+            "checkStatus": {
+                "code": 2002,
+                "initial": false,
+                "finished": true,
+                "result": true,
+                "autoProcess": false,
+                "description": "Положительное решение"
+            },
+            "attach": [
+                {
+                    "id": 86562,
+                    "ext": "pdf",
+                    "generated": false,
+                    "type": {
+                        "code": 0,
+                        "name": "Не определено",
+                        "signed": false
+                    },
+                    "fileName": "запрос от 26-09-2024 15:04:20.pdf"
+                }
+            ],
+            "autoStart": true,
+            "error": false,
+            "newGroupCode": 3,
+            "newGroupName": "Проверка оснований для приостановки рассмотрения заявления о выдаче (продлении / переоформлении / прекращении) лицензии"
+        },
+        {
+            "checkId": 114816,
+            "requestId": 225358,
+            "dateInsert": "2024-09-26T15:04:20.612972",
+            "code": 2023,
+            "apiOrder": 1009,
+            "name": "Запрос на проверку уплаты государственной пошлины",
+            "groupCode": 200,
+            "upload": true,
+            "delete": true,
+            "deleteGenerated": true,
+            "cluster": {
+                "id": 1,
+                "code": 1001,
+                "mean": "check",
+                "description": "Проверка"
+            },
+            "examDoc": false,
+            "automatic": false,
+            "newGroupCode": null,
+            "newGroupName": null,
+            "checkStatus": {
+                "code": 2008,
+                "initial": true,
+                "finished": false,
+                "autoProcess": false,
+                "description": "Запланировано"
+            },
+            "nextStatuses": [
+                {
+                    "code": 2002,
+                    "initial": false,
+                    "finished": true,
+                    "result": true,
+                    "autoProcess": false,
+                    "description": "Положительное решение"
+                },
+                {
+                    "code": 2013,
+                    "initial": false,
+                    "finished": true,
+                    "result": false,
+                    "autoProcess": false,
+                    "description": "Отрицательное решение"
+                }
+            ],
+            "autoStart": true,
+            "error": false,
+            "newGroupCode": 2,
+            "newGroupName": "Проверка оснований для отказа в рассмотрении заявления о выдаче (продлении / переоформлении / прекращении) лицензии"
+        },
+        {
+            "checkId": 114809,
+            "requestId": 225358,
+            "dateInsert": "2024-09-26T15:04:20.612972",
+            "code": 2025,
+            "apiOrder": 1011,
+            "name": "Запрос на проверку наличия заключения Росаккредитации",
+            "groupCode": 200,
+            "upload": false,
+            "delete": true,
+            "deleteGenerated": true,
+            "cluster": {
+                "id": 1,
+                "code": 1001,
+                "mean": "check",
+                "description": "Проверка"
+            },
+            "examDoc": false,
+            "automatic": true,
+            "newGroupCode": null,
+            "newGroupName": null,
+            "checkStatus": {
+                "code": 2009,
+                "initial": false,
+                "finished": false,
+                "autoProcess": true,
+                "description": "Сведения получены"
+            },
+            "attach": [
+                {
+                    "id": 86564,
+                    "ext": "pdf",
+                    "generated": false,
+                    "type": {
+                        "code": 0,
+                        "name": "Не определено",
+                        "signed": false
+                    },
+                    "fileName": "запрос от 26-09-2024 15:04:20.pdf"
+                },
+                {
+                    "id": 86563,
+                    "ext": "pdf",
+                    "generated": false,
+                    "type": {
+                        "code": 0,
+                        "name": "Не определено",
+                        "signed": false
+                    },
+                    "fileName": "запрос от 26-09-2024 15:04:20.pdf"
+                }
+            ],
+            "nextStatuses": [
+                {
+                    "code": 2002,
+                    "initial": false,
+                    "finished": true,
+                    "result": true,
+                    "autoProcess": false,
+                    "description": "Положительное решение"
+                },
+                {
+                    "code": 2013,
+                    "initial": false,
+                    "finished": true,
+                    "result": false,
+                    "autoProcess": false,
+                    "description": "Отрицательное решение"
+                }
+            ],
+            "autoStart": true,
+            "error": false,
+            "newGroupCode": 2,
+            "newGroupName": "Проверка оснований для отказа в рассмотрении заявления о выдаче (продлении / переоформлении / прекращении) лицензии"
+        },
+        {
+            "checkId": 114812,
+            "requestId": 225358,
+            "dateInsert": "2024-09-26T15:04:20.612972",
+            "code": 2044,
+            "apiOrder": 1013,
+            "name": "Запрос на проверку постановки ОП на учет в налоговом органе",
+            "groupCode": 200,
+            "upload": true,
+            "delete": true,
+            "deleteGenerated": true,
+            "cluster": {
+                "id": 1,
+                "code": 1001,
+                "mean": "check",
+                "description": "Проверка"
+            },
+            "examDoc": false,
+            "automatic": true,
+            "newGroupCode": null,
+            "newGroupName": null,
+            "checkStatus": {
+                "code": 3005,
+                "initial": false,
+                "finished": false,
+                "autoProcess": true,
+                "description": "Запрос направлен"
+            },
+            "attach": [],
+            "nextStatuses": [],
+            "autoStart": true,
+            "error": false,
+            "newGroupCode": 3,
+            "newGroupName": "Проверка оснований для приостановки рассмотрения заявления о выдаче (продлении / переоформлении / прекращении) лицензии"
+        }
+    ],
+    "deloDate": "2024-09-26",
+    "licenseType": {
+        "code": 3,
+        "description": "производство, хранение и поставки произведенной сельскохозяйственными производителями винодельческой продукции",
+        "shortName": "ПХП_СХП",
+        "region": false
+    },
+    "attach": [
+        {
+            "id": 12108,
+            "fileName": "file",
+            "ext": "pdf",
+            "type": {
+                "code": 0,
+                "name": "Не определено",
+                "signed": false
+            }
+        }
+    ],
+    "regionCode": "77",
+    "status": {
+        "code": 2001,
+        "description": "На рассмотрении",
+        "initialStatus": true,
+        "finishedStatus": false
+    },
+    "indicator": {
+        "finished": 4,
+        "total": 26,
+        "showPercent": true
+    },
+    "requestType": {
+        "code": 7,
+        "description": "Заявление о выдаче лицензии",
+        "region": true
+    },
+    "reregTypes": [],
+    "execUser": {
+        "id": 111,
+        "firstName": "Auto",
+        "middleName": null,
+        "lastName": "Auto"
+    },
+    "erulRequest": {
+        "erulLicNum": null,
+        "versionLic": null,
+        "issueData": null,
+        "erulChangeResult": false,
+        "erulChangeErrorType": null,
+        "errorDescription": null
+    },
+    "finalResult": true,
+    "suspensionSign": false,
+    "kppNeeded": true,
+    "fromEpgu": false,
+    "checkFalse": false,
+    "numberDaysFromRequestDateinsert": 10,
+    "examIsActive": false,
+    "emailNeeded": false,
+    "mvdNeeded": false,
+    "minselhozNeeded": false,
+    "description": "На рассмотрении",
+    "requestTypeDescription": "Заявление о выдаче лицензии",
+    "statusCode": 2001,
+    "licenseTypeId": 3,
+    "requestTypeId": 7
+}

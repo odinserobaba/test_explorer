@@ -1,0 +1,30 @@
+2024-10-13 19:28:48,170 - INFO - get_token developer 77 77 77
+2024-10-13 19:28:48,170 - INFO - Sending request to https://lk-test.egais.ru/api-lc-license/tools/token?listRegionCodes=77&regionCode=77&role=developer
+2024-10-13 19:28:48,258 - INFO - Received response with status code 200
+2024-10-13 19:28:48,258 - INFO - Extracted token: eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6IkF1dG8iLCJmaXJzdE5hbWUiOiJBdXRvIiwicmVnaW9uQ29kZSI6Ijc3Iiwicm9sZSI6ImRldmVsb3BlciIsInJvbGVpZCI6IjAiLCJwZXJtaXNzaW9ucyI6IlJldGFpbCIsImxvY2FsaXR5IjoiQXV0byIsImxpc3RSZWdpb25Db2RlcyI6Ijc3IiwicmVnaW9uIjoiQXV0byIsInVzZXJpZCI6IjEyMyJ9.TeFhv1F-lY6HxoAEWz4bL_-ATkTw5u_7SJ66Izw88W31v4Qzq-1PxBFhN-CCUKTc425cG9PEJSJvlZCTO3JnmA
+2024-10-13 19:28:48,259 - INFO - Получили токен eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6IkF1dG8iLCJmaXJzdE5hbWUiOiJBdXRvIiwicmVnaW9uQ29kZSI6Ijc3Iiwicm9sZSI6ImRldmVsb3BlciIsInJvbGVpZCI6IjAiLCJwZXJtaXNzaW9ucyI6IlJldGFpbCIsImxvY2FsaXR5IjoiQXV0byIsImxpc3RSZWdpb25Db2RlcyI6Ijc3IiwicmVnaW9uIjoiQXV0byIsInVzZXJpZCI6IjEyMyJ9.TeFhv1F-lY6HxoAEWz4bL_-ATkTw5u_7SJ66Izw88W31v4Qzq-1PxBFhN-CCUKTc425cG9PEJSJvlZCTO3JnmA
+2024-10-13 19:28:48,259 - INFO - test_base_info_request -> request_id 225358
+2024-10-13 19:28:48,260 - INFO - Sending request to https://lk-test.egais.ru/api-lc-license/dashboard/license/request/225358/extended
+2024-10-13 19:28:48,702 - INFO - Received response with status code 200
+2024-10-13 19:28:48,704 - INFO - Sending request to https://lk-test.egais.ru/api-lc-license/dashboard/license/request/225358/info
+2024-10-13 19:28:49,690 - INFO - Received response with status code 200
+2024-10-13 19:30:45,850 - INFO - get_token developer 77 77 77
+2024-10-13 19:30:45,850 - INFO - Sending request to https://lk-test.egais.ru/api-lc-license/tools/token?listRegionCodes=77&regionCode=77&role=developer
+2024-10-13 19:30:45,918 - INFO - Received response with status code 200
+2024-10-13 19:30:45,918 - INFO - Extracted token: eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6IkF1dG8iLCJmaXJzdE5hbWUiOiJBdXRvIiwicmVnaW9uQ29kZSI6Ijc3Iiwicm9sZSI6ImRldmVsb3BlciIsInJvbGVpZCI6IjAiLCJwZXJtaXNzaW9ucyI6IlJldGFpbCIsImxvY2FsaXR5IjoiQXV0byIsImxpc3RSZWdpb25Db2RlcyI6Ijc3IiwicmVnaW9uIjoiQXV0byIsInVzZXJpZCI6IjEyMyJ9.TeFhv1F-lY6HxoAEWz4bL_-ATkTw5u_7SJ66Izw88W31v4Qzq-1PxBFhN-CCUKTc425cG9PEJSJvlZCTO3JnmA
+2024-10-13 19:30:45,919 - INFO - Получили токен eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6IkF1dG8iLCJmaXJzdE5hbWUiOiJBdXRvIiwicmVnaW9uQ29kZSI6Ijc3Iiwicm9sZSI6ImRldmVsb3BlciIsInJvbGVpZCI6IjAiLCJwZXJtaXNzaW9ucyI6IlJldGFpbCIsImxvY2FsaXR5IjoiQXV0byIsImxpc3RSZWdpb25Db2RlcyI6Ijc3IiwicmVnaW9uIjoiQXV0byIsInVzZXJpZCI6IjEyMyJ9.TeFhv1F-lY6HxoAEWz4bL_-ATkTw5u_7SJ66Izw88W31v4Qzq-1PxBFhN-CCUKTc425cG9PEJSJvlZCTO3JnmA
+2024-10-13 19:30:45,919 - INFO - test_base_info_request -> request_id 225358
+2024-10-13 19:30:45,919 - INFO - Sending request to https://lk-test.egais.ru/api-lc-license/dashboard/license/request/225358/extended
+2024-10-13 19:30:46,343 - INFO - Received response with status code 200
+2024-10-13 19:30:46,345 - INFO - Sending request to https://lk-test.egais.ru/api-lc-license/dashboard/license/request/225358/info
+2024-10-13 19:30:47,322 - INFO - Received response with status code 200
+2024-10-13 19:31:57,830 - INFO - get_token developer 77 77 77
+2024-10-13 19:31:57,830 - INFO - Sending request to https://lk-test.egais.ru/api-lc-license/tools/token?listRegionCodes=77&regionCode=77&role=developer
+2024-10-13 19:31:57,894 - INFO - Received response with status code 200
+2024-10-13 19:31:57,894 - INFO - Extracted token: eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6IkF1dG8iLCJmaXJzdE5hbWUiOiJBdXRvIiwicmVnaW9uQ29kZSI6Ijc3Iiwicm9sZSI6ImRldmVsb3BlciIsInJvbGVpZCI6IjAiLCJwZXJtaXNzaW9ucyI6IlJldGFpbCIsImxvY2FsaXR5IjoiQXV0byIsImxpc3RSZWdpb25Db2RlcyI6Ijc3IiwicmVnaW9uIjoiQXV0byIsInVzZXJpZCI6IjEyMyJ9.TeFhv1F-lY6HxoAEWz4bL_-ATkTw5u_7SJ66Izw88W31v4Qzq-1PxBFhN-CCUKTc425cG9PEJSJvlZCTO3JnmA
+2024-10-13 19:31:57,895 - INFO - Получили токен eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6IkF1dG8iLCJmaXJzdE5hbWUiOiJBdXRvIiwicmVnaW9uQ29kZSI6Ijc3Iiwicm9sZSI6ImRldmVsb3BlciIsInJvbGVpZCI6IjAiLCJwZXJtaXNzaW9ucyI6IlJldGFpbCIsImxvY2FsaXR5IjoiQXV0byIsImxpc3RSZWdpb25Db2RlcyI6Ijc3IiwicmVnaW9uIjoiQXV0byIsInVzZXJpZCI6IjEyMyJ9.TeFhv1F-lY6HxoAEWz4bL_-ATkTw5u_7SJ66Izw88W31v4Qzq-1PxBFhN-CCUKTc425cG9PEJSJvlZCTO3JnmA
+2024-10-13 19:31:57,895 - INFO - test_base_info_request -> request_id 225358
+2024-10-13 19:31:57,895 - INFO - Sending request to https://lk-test.egais.ru/api-lc-license/dashboard/license/request/225358/extended
+2024-10-13 19:31:58,285 - INFO - Received response with status code 200
+2024-10-13 19:31:58,288 - INFO - Sending request to https://lk-test.egais.ru/api-lc-license/dashboard/license/request/225358/info
+2024-10-13 19:31:58,970 - INFO - Received response with status code 200
