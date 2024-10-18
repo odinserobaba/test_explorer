@@ -1,18 +1,24 @@
 import unittest
+
 from controllers.e_gais_request import EGAISRequest
+from settings import requestid, token, blistRegionCodes, bregionCode, brole
+import logging
 import urllib3
 urllib3.disable_warnings()
-class TestEGAISRequest(unittest.TestCase):
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+file_handler = logging.FileHandler('app.log')
+file_handler.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
+
+
+class TestEGAISIRequest(unittest.TestCase):
     def setUp(self):
-        self.base_url = 'https://lk-test.egais.ru/api-lc-license/tools/token'
-        self.request_instance = EGAISRequest(self.base_url)
-
-    def test_make_request(self):
-        listRegionCodes = 77
-        regionCode = 77
-        role = 'develop'
-
-        token = self.request_instance.make_request(listRegionCodes, regionCode, role)
-        self.assertIsNot(token,None)
-        # self.assertTrue(token.startswith('beaver'))
-        # self.assertIn('beaver', token.lower()) //TODO добавить 
+        self.sand_license= EGAISRequest("")
+       
+    def test_create_sand_license(self, inn='7841051711', license_type_code=9, request_type_code=7, orgBriefName='ООО "ЗХП_АП "', orgFullName='ООО "ЗХП_АП "'):
+        result=self.sand_license.run_http_requests_on_remote(inn='7841051711', license_type_code=9, request_type_code=7, orgBriefName='ООО "ЗХП_АП "', orgFullName='ООО "ЗХП_АП "')
+        self.assertIsNotNone(result)

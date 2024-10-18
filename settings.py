@@ -6,3 +6,5 @@ bregionCode = 77
 brole = 'developer'
 #main_path = "/media/nuanred/backup/repo /test_explorer/save_report/reports"
 main_path='/media/nuanred/backup/repo /test_explorer/redmine/2024_10_16/484760/'
+
+sand_token = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJmaXJzdE5hbWUiOiJBdXRvIiwibGFzdE5hbWUiOiJBdXRvIiwicmVnaW9uQ29kZSI6Ijc3Iiwicm9sZSI6ImRldmVsb3BlciIsInBlcm1pc3Npb25zIjoiUmV0YWlsIiwicm9sZWlkIjoiMCIsImxvY2FsaXR5IjoiQXV0byIsImxpc3RSZWdpb25Db2RlcyI6Ijc3IiwicmVnaW9uIjoiQXV0byIsInVzZXJpZCI6IjEyMyJ9.ZLZ8qYylnLFlgjfIbQxC8I4ZsTcANDFyioJEyA2jp0mBsZI-GOD-OY-fsvjoxZXBh_yaYTjVJIPUB0FC36BbnA"

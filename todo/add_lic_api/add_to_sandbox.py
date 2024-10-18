@@ -1,11 +1,12 @@
-import requests
-import logging
+import urllib3
 import paramiko
-from abstract_class.abstract_request import AbstractRequest
-from utils.utils import append_text_to_file
-from settings import res_file,sand_token
-# Настройка логирования
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+import requests
+
+import logging
+import urllib3
+urllib3.disable_warnings()
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 file_handler = logging.FileHandler('app.log')
 file_handler.setLevel(logging.INFO)
@@ -53,10 +54,8 @@ class EGAISRequest(AbstractRequest):
                     stdin, stdout, stderr = jhost.exec_command(c + '\n')
                     res.append(stdout.read().decode())
                 else:
-                    continue
-                    # logger.error(f"EGAISRequest execute_ssh_commands нет команд для выполнения {commands}")
-                    # raise ValueError(f"Нет команд для выполнения ")
-                    # continue
+                    logger.error(f"EGAISRequest execute_ssh_commands нет команд для выполнения {commands}")
+                    raise ValueError(f"Нет команд для выполнения ")
             jhost.close()
             vm.close()
             return res
@@ -66,7 +65,7 @@ class EGAISRequest(AbstractRequest):
 
     def get_token_b(self):
         logger.info(f"EGAISRequest get_token_b получаем токен")
-        url = "https://license.api-lk.monitor-utm.ru/tools/token?role=developer"
+        url = "https://lk-test.egais.ru/api-lc-license/tools/token?listRegionCodes=77&regionCode=77&role=developer"
         payload = ""
         headers = {
             'accept': '*/*',
@@ -74,7 +73,6 @@ class EGAISRequest(AbstractRequest):
         try:
             response = requests.request(
                 "GET", url, headers=headers, data=payload, verify=False)
-            logger.info(f"EGAISRequest get_token_b токен {response.text}")
             return response.text
         except Exception as e:
             logger.error(f"EGAISRequest get_token_b произошла ошибка {e}")
@@ -93,12 +91,12 @@ class EGAISRequest(AbstractRequest):
         file_path = '/home/ldapusers/Serobaba/1.pdf'
 
         # Команда для отправки POST-запроса
-        # get_token_cmd = self.get_token_b()
+        get_token_cmd = self.get_token_b()
         # Команда для отправки POST-запроса
-        if sand_token:
-            post_request_cmd = f"""
-            curl -X POST '{host}{post_license}' -H 'accept: */*' -H "Authorization:{sand_token}" -F 'file=@{file_path}' -F 'inn={inn}' -F 'licenseTypeCode={license_type_code}' -F 'orgBriefName={orgBriefName}' -F 'orgFullName={orgFullName}' -F 'requestTypeCode={request_type_code}'
-            """
+
+        post_request_cmd = f"""
+        curl -X POST '{host}{post_license}' -H 'accept: */*' -H "Authorization:{get_token_cmd}" -F 'file=@{file_path}' -F 'inn={inn}' -F 'licenseTypeCode={license_type_code}' -F 'orgBriefName={orgBriefName}' -F 'orgFullName={orgFullName}' -F 'requestTypeCode={request_type_code}'
+        """
         logging.info(f"post_cmd -> {post_request_cmd}")
         vm_details = {
             "hostname": "10.0.50.208",
@@ -110,8 +108,7 @@ class EGAISRequest(AbstractRequest):
             "username": "Serobaba",
             "password": "nuanred"
         }
-        # commands = [get_token_cmd, post_request_cmd]
-        commands = [post_request_cmd]
+        commands = [get_token_cmd, post_request_cmd]
         logger.info(f"EGAISRequest run_http_requests_on_remote команды для выполнения {commands}")
         try:
             result = self.execute_ssh_commands(commands, vm_details, jhost_details)

@@ -2,6 +2,8 @@ import os
 import time
 import subprocess
 import logging
+import paramiko
+import requests
 from abstract_class.abstract_request import AbstractRequest
 
 logging.basicConfig(level=logging.INFO,
@@ -14,67 +16,104 @@ file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
 
-class EGAISCreateLicense(AbstractRequest):
-    def __init__(self):
-        pass
 
-    @staticmethod
-    def get_logs(path, services, context, message):
+class EGAISRequest(AbstractRequest):
+    def __init__(self, base_url):
+        self.base_url = base_url
+        self.vm_details = {
+            "hostname": "10.0.50.208",
+            "username": "Serobaba",
+            "password": "nuanred"
+        }
+        self.jhost_details = {
+            "hostname": "10.10.4.32",
+            "username": "Serobaba",
+            "password": "nuanred"
+        }
+
+    def execute_ssh_commands(self, commands, vm_details, jhost_details):
         try:
-            # Получаем текущую дату
-            date = time.strftime('%Y-%m-%d', time.localtime())
+            logger.info(f"Start EGAISRequest execute_ssh_commands")
+            vm = paramiko.SSHClient()
+            vm.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            vm.connect(vm_details['hostname'], username=vm_details['username'],
+                       password=vm_details['password'])
 
-            # Формируем путь к папке с логами
-            path = f'{path}/{date}_{services}_{context}_{message}'
+            vm_transport = vm.get_transport()
+            dest_addr = (jhost_details['hostname'], 22)
+            local_addr = (vm_details['hostname'], 22)
+            vm_channel = vm_transport.open_channel(
+                "direct-tcpip", dest_addr, local_addr)
 
-            # Создаем папку, если ее нет
-            if not os.path.exists(path):
-                os.makedirs(path)
-                logger.info(f'Папка "{path}" создана.')
-            else:
-                logger.info(f'Папка "{path}" уже существует.')
+            jhost = paramiko.SSHClient()
+            jhost.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            jhost.connect(jhost_details['hostname'], username=jhost_details['username'],
+                          password=jhost_details['password'], sock=vm_channel)
+            res = []
+            logger.info(f"EGAISRequest execute_ssh_commands выполняем команды {commands}")
+            for c in commands:
+                if c:
+                    stdin, stdout, stderr = jhost.exec_command(c + '\n')
+                    res.append(stdout.read().decode())
+                else:
+                    logger.error(f"EGAISRequest execute_ssh_commands нет команд для выполнения {commands}")
+                    raise ValueError(f"Нет команд для выполнения ")
+            jhost.close()
+            vm.close()
+            return res
+        except Exception as e:  
+            logger.error(f"EGAISRequest execute_ssh_commands произошла ошибка {e}")
+            return None
 
-            # Подключаемся к DockerHub и получаем список подов
-            sshProcess = subprocess.Popen(['ssh', 'DockerHub'], stdin=subprocess.PIPE,
-                                          stdout=subprocess.PIPE, universal_newlines=True, bufsize=0)
-            sshProcess.stdin.write(f'kubectl config use-context {context}\n')
-            sshProcess.stdin.write('kubectl get pods --all-namespaces\n')
-            sshProcess.stdin.close()
-
-            list = []
-            for line in sshProcess.stdout:
-                if line == "END\n":
-                    break
-                list.append(line)
-                print(line, end="")
-            for line in sshProcess.stdout:
-                print(line, end="")
-
-            # Получаем список подов и фильтруем его по имени сервиса
-            data = tuple(x.split() for x in list[17:])
-            find_str = services
-            str_list = [[x[0], x[1]] for x in data if find_str in x[1]]
-            logger.info(f"EGAISLogs {str_list}")
-            print(str_list)
-            if str_list!=[]:
-                command = f'kubectl logs -n {str_list[0][0]} {str_list[0][1]}'
-                logger.info(
-                    f'EGAISLogs -> kubectl logs -n {str_list[0][0]} {str_list[0][1]}')
-                sshProcess_save_log = subprocess.Popen(
-                    ['ssh', 'DockerHub'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, universal_newlines=True, bufsize=0)
-                sshProcess_save_log.stdin.write(command)
-                sshProcess_save_log.stdin.close()
-                save_text = sshProcess_save_log.stdout.readlines()
-                save_text = [x.split('\n') for x in save_text]
-                logger.info(
-                    f'EGAISLogs -> пишем в файл - {path}/{context}{services}{message}.log')
-                with open(f"{path}/{context}{services}{message}.log", "a") as output:
-                    for x in save_text:
-                        output.write(str(x[0]) + '\n')
-                logger.info(
-                    f'EGAISLogs -> успешно записан файл в  - {path}/{context}{services}{message}.log')
-                return f'{path}/{context}{services}{message}.log'
-            else:
-                logger.error(f'EGAISLogs -> нет подов - {path} {context} {services} {message} ')
+    def get_token_b(self):
+        logger.info(f"EGAISRequest get_token_b получаем токен")
+        url = "https://lk-test.egais.ru/api-lc-license/tools/token?listRegionCodes=77&regionCode=77&role=developer"
+        payload = ""
+        headers = {
+            'accept': '*/*',
+        }
+        try:
+            response = requests.request(
+                "GET", url, headers=headers, data=payload, verify=False)
+            return response.text
         except Exception as e:
-            logger.exception(f'Ошибка при получении логов: {e}')
+            logger.error(f"EGAISRequest get_token_b произошла ошибка {e}")
+        finally:
+            return None
+
+    def run_http_requests_on_remote(self, inn='7841051711', license_type_code=9, request_type_code=7, orgBriefName='ООО "ЗХП_АП "', orgFullName='ООО "ЗХП_АП "'):
+        # host = "http://lk-test.test-kuber-nd.fsrar.ru/"
+        host = "https://license.api-lk.monitor-utm.ru/"  # SANDBOX
+        # host = "https://lk-test.egais.ru/api-lc-license/"
+        # role = 'role=developer'
+        get_token = 'tools/token?listRegionCodes=77&regionCode=77&role=developer'
+        post_license = 'dashboard/license/request/'
+
+        file = '/home/nuanred/Desktop/wiki/license_pr/out/1.pdf'
+        file_path = '/home/ldapusers/Serobaba/1.pdf'
+
+        # Команда для отправки POST-запроса
+        get_token_cmd = self.get_token_b()
+        # Команда для отправки POST-запроса
+
+        post_request_cmd = f"""
+        curl -X POST '{host}{post_license}' -H 'accept: */*' -H "Authorization:{get_token_cmd}" -F 'file=@{file_path}' -F 'inn={inn}' -F 'licenseTypeCode={license_type_code}' -F 'orgBriefName={orgBriefName}' -F 'orgFullName={orgFullName}' -F 'requestTypeCode={request_type_code}'
+        """
+        logging.info(f"post_cmd -> {post_request_cmd}")
+        vm_details = {
+            "hostname": "10.0.50.208",
+            "username": "Serobaba",
+            "password": "nuanred"
+        }
+        jhost_details = {
+            "hostname": "10.10.4.32",
+            "username": "Serobaba",
+            "password": "nuanred"
+        }
+        commands = [get_token_cmd, post_request_cmd]
+        logger.info(f"EGAISRequest run_http_requests_on_remote команды для выполнения {commands}")
+        try:
+            result = self.execute_ssh_commands(commands, vm_details, jhost_details)
+            logger.info(f"EGAISRequest run_http_requests_on_remote команды для выполнения {result}")
+        except Exception as e:
+            logger.error(f"EGAISRequest run_http_requests_on_remote произошла ошибка {e} при выполнении команд {commands}")
