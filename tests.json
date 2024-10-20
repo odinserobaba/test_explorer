@@ -31,7 +31,7 @@
                 "parameters": {
                     "param1": "default_value1",
                     "param2": "default_value2",
-                    "log_path": "/path/to/logs"
+                    "log_path": "./save_report"
                 }
             },
             "test4": {
