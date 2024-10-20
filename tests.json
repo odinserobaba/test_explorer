@@ -4,11 +4,21 @@
         "tests": {
             "test1": {
                 "description": "First test",
-                "command": "python -m unittest tests.test_example.TestExample.test_addition"
+                "command": "python -m unittest tests.test_example.TestExample.test_addition",
+                "parameters": {
+                    "param1": "default_value1",
+                    "param2": "default_value2",
+                    "log_path": "/path/to/logs"
+                }
             },
             "test2": {
                 "description": "Second test",
-                "command": "python -m unittest tests.test_example.TestExample.test_subtraction"
+                "command": "python -m unittest tests.test_example.TestExample.test_subtraction",
+                "parameters": {
+                    "param1": "default_value1",
+                    "param2": "default_value2",
+                    "log_path": "/path/to/logs"
+                }
             }
         }
     },
@@ -17,11 +27,21 @@
         "tests": {
             "test3": {
                 "description": "Third test",
-                "command": "python -m unittest tests.test_example.TestExample.test_addition"
+                "command": "python -m unittest tests.test_example.TestExample.test_addition",
+                "parameters": {
+                    "param1": "default_value1",
+                    "param2": "default_value2",
+                    "log_path": "/path/to/logs"
+                }
             },
             "test4": {
                 "description": "Fourth test",
-                "command": "python -m unittest tests.test_example.TestExample.test_subtraction"
+                "command": "python -m unittest tests.test_example.TestExample.test_subtraction",
+                "parameters": {
+                    "param1": "default_value1",
+                    "param2": "default_value2",
+                    "log_path": "/path/to/logs"
+                }
             }
         }
     }

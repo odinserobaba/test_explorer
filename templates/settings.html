@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Settings</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Tests</a> |
+            <a href="{{ url_for('settings_page') }}">Settings</a>
+        </nav>
+        <form method="POST">
+            <div class="form-group">
+                <label for="res_file">res_file:</label>
+                <input type="text" id="res_file" name="res_file" value="{{ settings['res_file'] }}">
+            </div>
+            <div class="form-group">
+                <label for="token">token:</label>
+                <input type="text" id="token" name="token" value="{{ settings['token'] }}">
+            </div>
+            <div class="form-group">
+                <label for="requestid">requestid:</label>
+                <input type="number" id="requestid" name="requestid" value="{{ settings['requestid'] }}">
+            </div>
+            <div class="form-group">
+                <label for="blistRegionCodes">blistRegionCodes:</label>
+                <input type="number" id="blistRegionCodes" name="blistRegionCodes" value="{{ settings['blistRegionCodes'] }}">
+            </div>
+            <div class="form-group">
+                <label for="bregionCode">bregionCode:</label>
+                <input type="number" id="bregionCode" name="bregionCode" value="{{ settings['bregionCode'] }}">
+            </div>
+            <div class="form-group">
+                <label for="brole">brole:</label>
+                <input type="text" id="brole" name="brole" value="{{ settings['brole'] }}">
+            </div>
+            <div class="form-group">
+                <label for="main_path">main_path:</label>
+                <input type="text" id="main_path" name="main_path" value="{{ settings['main_path'] }}">
+            </div>
+            <div class="form-group">
+                <label for="sand_token">sand_token:</label>
+                <input type="text" id="sand_token" name="sand_token" value="{{ settings['sand_token'] }}">
+            </div>
+            <button type="submit">Save Settings</button>
+        </form>
+    </div>
+</body>
+</html>

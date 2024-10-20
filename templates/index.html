@@ -9,6 +9,10 @@
 <body>
     <div class="container">
         <h1>Test Manager</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Tests</a> |
+            <a href="{{ url_for('settings_page') }}">Settings</a>
+        </nav>
         <div class="group-list">
             {% for group_name, group in tests.items() %}
                 <div class="group-item">
@@ -17,8 +21,18 @@
                         {% for test_name, test in group.tests.items() %}
                             <div class="test-item">
                                 <h3>{{ test.description }}</h3>
-                                <button onclick="runTest('{{ group_name }}', '{{ test_name }}')">Run Test</button>
+                                <form id="test-form-{{ group_name }}-{{ test_name }}" onsubmit="runTest(event, '{{ group_name }}', '{{ test_name }}')">
+                                    {% for param_name, param_value in test.parameters.items() %}
+                                        <div class="form-group">
+                                            <label for="{{ param_name }}">{{ param_name }}:</label>
+                                            <input type="text" id="{{ param_name }}" name="{{ param_name }}" value="{{ param_value }}" class="dark-input">
+                                        </div>
+                                    {% endfor %}
+                                    <button type="submit">Run Test</button>
+                                </form>
                                 <pre id="log-{{ group_name }}-{{ test_name }}" class="log-output"></pre>
+                                <button onclick="copyLog('{{ group_name }}', '{{ test_name }}')">Copy Log</button>
+                                <button onclick="openFolder('{{ group_name }}', '{{ test_name }}')">Open Folder</button>
                             </div>
                         {% endfor %}
                     </div>
@@ -27,21 +41,47 @@
         </div>
     </div>
     <script>
-        function runTest(groupName, testName) {
+        function runTest(event, groupName, testName) {
+            event.preventDefault();
+            const form = document.getElementById(`test-form-${groupName}-${testName}`);
+            const formData = new FormData(form);
+            formData.append('group_name', groupName);
+            formData.append('test_name', testName);
+
             fetch('/run_test', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams({
-                    'group_name': groupName,
-                    'test_name': testName
-                })
+                body: formData
             })
             .then(response => response.json())
             .then(data => {
                 const logOutput = document.getElementById(`log-${groupName}-${testName}`);
                 logOutput.textContent = `stdout:\n${data.stdout}\n\nstderr:\n${data.stderr}`;
+                logOutput.setAttribute('data-log-path', data.log_path);
+                logOutput.setAttribute('data-report-file', data.report_file);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function copyLog(groupName, testName) {
+            const logOutput = document.getElementById(`log-${groupName}-${testName}`);
+            navigator.clipboard.writeText(logOutput.textContent);
+        }
+
+        function openFolder(groupName, testName) {
+            const logOutput = document.getElementById(`log-${groupName}-${testName}`);
+            const logPath = logOutput.getAttribute('data-log-path');
+            fetch('/open_folder', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'log_path': logPath
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
             })
             .catch(error => console.error('Error:', error));
         }

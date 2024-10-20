@@ -1,10 +1,8 @@
-res_file ='2024-10-13_test.md'
-token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiLQn9C-0LTRgNGP0LTRh9C40LoiLCJsYXN0TmFtZSI6ItCQ0J4gJ9Cm0JXQndCi0KDQmNCd0KTQntCg0JwnIiwicmVnaW9uQ29kZSI6Ijc3Iiwicm9sZSI6ImRldmVsb3BlciIsInJvbGVpZCI6IjEyIiwicGVybWlzc2lvbnMiOiJVc2VycyxSb2xlcyxOZXdzLFN0YXRpc3RpY2FsSW5mLFJldGFpbCxNYXJrZXRQYXJ0aWNpcGFudHMsUmVwb3J0cyxPcmdhbml6YXRpb25zLFJlcG9ydFRlbXBsYXRlcyxSZXRhaWwsUmV0YWlsLFJldGFpbCxSZXRhaWwsUmV0YWlsIiwibG9jYWxpdHkiOiLQnNC-0YHQutCy0LAiLCJsaXN0UmVnaW9uQ29kZXMiOiI3NyIsInJlZ2lvbiI6Ijc3IiwidXNlcmlkIjoiMTI1IiwibmJmIjoxNzI5MzgwNjM4LCJleHAiOjE3Mjk1MTAyMzgsImlzcyI6IkNBRWdhaXMiLCJhdWQiOiJVc2VycyJ9.kO4VfQkGyYH8PqUkHvF7M-0LaKm8oLs0-_W3PilUkUQ"
-requestid =225358
+res_file = '2024-10-21_test.md'
+token = ''
+requestid = 225358
 blistRegionCodes = 77
 bregionCode = 77
 brole = 'developer'
-#main_path = "/media/nuanred/backup/repo /test_explorer/save_report/reports"
-main_path='/media/nuanred/backup/repo /test_explorer/redmine/2024_10_16/484760/'
-
-sand_token = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJmaXJzdE5hbWUiOiJBdXRvIiwibGFzdE5hbWUiOiJBdXRvIiwicmVnaW9uQ29kZSI6Ijc3Iiwicm9sZSI6ImRldmVsb3BlciIsInBlcm1pc3Npb25zIjoiUmV0YWlsIiwicm9sZWlkIjoiMCIsImxvY2FsaXR5IjoiQXV0byIsImxpc3RSZWdpb25Db2RlcyI6Ijc3IiwicmVnaW9uIjoiQXV0byIsInVzZXJpZCI6IjEyMyJ9.ZLZ8qYylnLFlgjfIbQxC8I4ZsTcANDFyioJEyA2jp0mBsZI-GOD-OY-fsvjoxZXBh_yaYTjVJIPUB0FC36BbnA"
+main_path = '/media/nuanred/backup/repo /test_explorer/redmine/2024_10_16/484760/'
+sand_token = ''
