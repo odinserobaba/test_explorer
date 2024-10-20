@@ -20,3 +20,7 @@ python -m unittest tests.test_e_gais_first_info
 
 
 sudo snap install task --classic
+nuanred@nuanred:~/Documents/testing$ python -m venv  venv
+nuanred@nuanred:~/Documents/testing$ source venv/bin/activate
+
+python app.py

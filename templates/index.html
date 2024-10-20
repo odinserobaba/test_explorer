@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Test Manager</h1>
+        <div class="group-list">
+            {% for group_name, group in tests.items() %}
+                <div class="group-item">
+                    <h2>{{ group.description }}</h2>
+                    <div class="test-list">
+                        {% for test_name, test in group.tests.items() %}
+                            <div class="test-item">
+                                <h3>{{ test.description }}</h3>
+                                <button onclick="runTest('{{ group_name }}', '{{ test_name }}')">Run Test</button>
+                                <pre id="log-{{ group_name }}-{{ test_name }}" class="log-output"></pre>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        function runTest(groupName, testName) {
+            fetch('/run_test', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'group_name': groupName,
+                    'test_name': testName
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const logOutput = document.getElementById(`log-${groupName}-${testName}`);
+                logOutput.textContent = `stdout:\n${data.stdout}\n\nstderr:\n${data.stderr}`;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

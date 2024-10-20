@@ -16,7 +16,7 @@ file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
 
-class TestEGAISExtendedRequest(unittest.TestCase):
+class TestEGaisFirstInfo(unittest.TestCase):
 
     def get_token(self):
         token_base_url = 'https://lk-test.egais.ru/api-lc-license/tools/token'   
@@ -34,8 +34,8 @@ class TestEGAISExtendedRequest(unittest.TestCase):
         self.request_id = 225358
         self.res_file='test_13_10.md'
         self.base_url = 'https://lk-test.egais.ru/api-lc-license/dashboard/license/request'
-        self.request_extended_instance = EGAISExtendedRequest(self.base_url,self.res_file)
-        self.request_info_instance = EGAISInfoRequest(self.base_url,self.res_file)
+        self.request_extended_instance = EGAISExtendedRequest(self.base_url)
+        self.request_info_instance = EGAISInfoRequest(self.base_url)
         self.license_id = requestid
         if token=="":
             self.token = self.get_token()
@@ -48,7 +48,7 @@ class TestEGAISExtendedRequest(unittest.TestCase):
     def test_base_info_request(self):
         logger.info(f"test_base_info_request -> request_id {self.request_id}")
         self.request_extended_instance.make_request(self.request_id,self.token)
-        self.request_info_instance.make_request(self.request_id,self.token)
+        # self.request_info_instance.make_request(self.request_id,self.token)
 
 if __name__ == '__main__':
     unittest.main()

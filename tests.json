@@ -1,0 +1,28 @@
+{
+    "group1": {
+        "description": "First group of tests",
+        "tests": {
+            "test1": {
+                "description": "First test",
+                "command": "python -m unittest tests.test_example.TestExample.test_addition"
+            },
+            "test2": {
+                "description": "Second test",
+                "command": "python -m unittest tests.test_example.TestExample.test_subtraction"
+            }
+        }
+    },
+    "group2": {
+        "description": "Second group of tests",
+        "tests": {
+            "test3": {
+                "description": "Third test",
+                "command": "python -m unittest tests.test_example.TestExample.test_addition"
+            },
+            "test4": {
+                "description": "Fourth test",
+                "command": "python -m unittest tests.test_example.TestExample.test_subtraction"
+            }
+        }
+    }
+}
