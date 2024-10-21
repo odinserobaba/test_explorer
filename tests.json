@@ -14,12 +14,22 @@
             },
             "test_request_info": {
                 "description": "test_request_info",
-                "command": " python -m unittest tests.test_request_info",
+                "command": " python -m unittest tests.test_request_info.TestRequestInfo.test_request_info",
                 "parameters": {
                     "test_request_info_task":"123456",
                     "test_request_info_request_id": 225494,
                     "test_request_info_log_path": "./save_report",
                     "test_request_info_message": "tests_task"
+                }
+            },
+            "test_request_extended": {
+                "description": "test_request_extended",
+                "command": " python -m unittest tests.test_request_info.TestRequestExtended.test_request_extended",
+                "parameters": {
+                    "test_request_extended_info_task":"123456",
+                    "test_request_extended_info_request_id": 225494,
+                    "test_request_extended_info_log_path": "./save_report",
+                    "test_request_extended_info_message": "tests_task"
                 }
             }
         }
