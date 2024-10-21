@@ -95,6 +95,7 @@ class EGAISRequest(AbstractRequest):
         # Команда для отправки POST-запроса
         # get_token_cmd = self.get_token_b()
         # Команда для отправки POST-запроса
+    
         if sand_token:
             post_request_cmd = f"""
             curl -X POST '{host}{post_license}' -H 'accept: */*' -H "Authorization:{sand_token}" -F 'file=@{file_path}' -F 'inn={inn}' -F 'licenseTypeCode={license_type_code}' -F 'orgBriefName={orgBriefName}' -F 'orgFullName={orgFullName}' -F 'requestTypeCode={request_type_code}'
@@ -116,6 +117,7 @@ class EGAISRequest(AbstractRequest):
         try:
             result = self.execute_ssh_commands(commands, vm_details, jhost_details)
             logger.info(f"EGAISRequest run_http_requests_on_remote команды для выполнения {result}")
+            return result
         except Exception as e:
             logger.error(f"EGAISRequest run_http_requests_on_remote произошла ошибка {e} при выполнении команд {commands}")
 

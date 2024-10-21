@@ -29,6 +29,8 @@
                                         </div>
                                     {% endfor %}
                                     <button type="submit">Run Test</button>
+                                    <button onclick="rerunTest('{{ group_name }}', '{{ test_name }}')">Run Test Again</button>
+
                                 </form>
                                 <pre id="log-{{ group_name }}-{{ test_name }}" class="log-output"></pre>
                                 <button onclick="copyLog('{{ group_name }}', '{{ test_name }}')">Copy Log</button>
@@ -60,6 +62,11 @@
                 logOutput.setAttribute('data-report-file', data.report_file);
             })
             .catch(error => console.error('Error:', error));
+        }
+
+        function rerunTest(groupName, testName) {
+            const form = document.getElementById(`test-form-${groupName}-${testName}`);
+            form.dispatchEvent(new Event('submit'));
         }
 
         function copyLog(groupName, testName) {

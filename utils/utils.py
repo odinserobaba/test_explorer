@@ -36,6 +36,7 @@ def validate_xml(data):
 def prettify_json(compact_json):
     try:
         # Преобразуем компактный JSON в объект Python
+        logging.info(f"prettify_json преобразуем json {compact_json}")
         if isinstance(compact_json, dict):
             compact_json = json.dumps(compact_json)
         json_obj = json.loads(compact_json)
@@ -43,6 +44,7 @@ def prettify_json(compact_json):
         pretty_json = json.dumps(json_obj, indent=4, sort_keys=True)
         return pretty_json
     except json.JSONDecodeError as e:
+        logging.info(f"prettify_json ошибка преобразования json {compact_json}")
         return f"Invalid JSON: {e}"
 
 
@@ -80,3 +82,51 @@ def save_logs_context(file_path: str, keywords: str, output_file: str, vol: int,
         logging.info(f"save_logs_context файл успешно записан {output_file}")
     except:
         logging.error(f"save_logs_context Ошибка записи в файл {output_file}")
+
+def save_jsons_context(context: str, output_file: str, message: str):
+    logging.info(f"save_json_context Начинаем сохранять логи")
+    lines = []
+    lines.append(prettify_json(context))
+    lines.insert(0, f'''
+{{{{collapse({message})
+<pre><code class='json'>
+''')
+    lines.append('''
+</code></pre>
+}}           
+''')
+    logging.info(f"save_json_context пишем  {lines}")
+    logging.info(f"save_json_context пишем  {output_file}")
+    try:
+        with open(output_file, 'a') as f_out:
+            f_out.writelines(lines)
+
+        logging.info(f"save_json_context файл успешно записан {output_file}")
+    except:
+        logging.error(f"save_json_context Ошибка записи в файл {output_file}")
+
+def save_collapse_context(context: str, output_file: str, message: str):
+    logging.info(f"save_json_context Начинаем сохранять логи")
+    lines = []
+    lines.append(context)
+    lines.insert(0, f'''
+{{{{collapse({message})
+<pre><code class='json'>
+''')
+    lines.append('''
+</code></pre>
+}}}}              
+''')
+    logging.info(f"save_json_context пишем  {lines}")
+    logging.info(f"save_json_context пишем  {output_file}")
+    try:
+        with open(output_file, 'a') as f_out:
+            f_out.writelines(lines)
+
+        logging.info(f"save_json_context файл успешно записан {output_file}")
+    except:
+        logging.error(f"save_json_context Ошибка записи в файл {output_file}")
+        
+        
+def compact_json(json_string):
+    return json.dumps(json.loads(json_string), separators=(',', ':'))

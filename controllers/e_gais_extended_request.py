@@ -5,6 +5,8 @@ import json
 from abstract_class.abstract_request_extended import AbstractRequestExtended
 from utils.utils import append_text_to_file
 from settings import res_file
+import urllib3
+urllib3.disable_warnings()
 # Настройка логирования
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)

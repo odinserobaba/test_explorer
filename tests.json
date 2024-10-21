@@ -1,23 +1,25 @@
 {
     "group1": {
-        "description": "First group of tests",
+        "description": "Create SAND license",
         "tests": {
-            "test1": {
-                "description": "First test",
-                "command": "python -m unittest tests.test_example.TestExample.test_addition",
+            "sand_license_create": {
+                "description": "Create license",
+                "command": "python -m unittest tests.test_e_gais_request.TestEGAISIRequest.test_create_sand_license",
                 "parameters": {
-                    "param1": "default_value1",
-                    "param2": "default_value2",
-                    "log_path": "/path/to/logs"
+                    "sand_license_create_license_type_code": 3,
+                    "sand_license_create_request_type_code": 7,
+                    "sand_license_create_message": "Создаем заявление:",
+                    "log_path": "./save_report"
                 }
             },
-            "test2": {
-                "description": "Second test",
-                "command": "python -m unittest tests.test_example.TestExample.test_subtraction",
+            "test_request_info": {
+                "description": "test_request_info",
+                "command": " python -m unittest tests.test_request_info",
                 "parameters": {
-                    "param1": "default_value1",
-                    "param2": "default_value2",
-                    "log_path": "/path/to/logs"
+                    "test_request_info_task":"123456",
+                    "test_request_info_request_id": 225494,
+                    "test_request_info_log_path": "./save_report",
+                    "test_request_info_message": "tests_task"
                 }
             }
         }

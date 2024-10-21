@@ -96,10 +96,10 @@ class EGAISRequest(AbstractRequest):
         get_token_cmd = self.get_token_b()
         # Команда для отправки POST-запроса
 
-        post_request_cmd = f"""
+        _post_request_cmd = f"""
         curl -X POST '{host}{post_license}' -H 'accept: */*' -H "Authorization:{get_token_cmd}" -F 'file=@{file_path}' -F 'inn={inn}' -F 'licenseTypeCode={license_type_code}' -F 'orgBriefName={orgBriefName}' -F 'orgFullName={orgFullName}' -F 'requestTypeCode={request_type_code}'
         """
-        logging.info(f"post_cmd -> {post_request_cmd}")
+        logging.info(f"post_cmd -> {_post_request_cmd}")
         vm_details = {
             "hostname": "10.0.50.208",
             "username": "Serobaba",
@@ -110,7 +110,7 @@ class EGAISRequest(AbstractRequest):
             "username": "Serobaba",
             "password": "nuanred"
         }
-        commands = [get_token_cmd, post_request_cmd]
+        commands = [get_token_cmd, _post_request_cmd]
         logger.info(f"EGAISRequest run_http_requests_on_remote команды для выполнения {commands}")
         try:
             result = self.execute_ssh_commands(commands, vm_details, jhost_details)

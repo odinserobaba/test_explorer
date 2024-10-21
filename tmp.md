@@ -1,186 +1,57 @@
-<!-- #region(collapsed) [NAME] -->
-{{collapse(Версия (тест))
-<pre>
-    api-lc-license
-    31bd869e dev 481269
-    #132358  deploy/test-circuit  91a5bc9b 
-    Evgeniy Serobaba
+<!-- #region(collapsed) [shell] -->
+{{collapse(Логи api-lc-license)
+<pre><code class='shell'>
+2024-10-21 12:34:15.089 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName................."org.postgresql.Driver"
+2024-10-21 12:34:15.089 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
+2024-10-21 12:34:15.089 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+2024-10-21 12:34:15.089 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+2024-10-21 12:34:15.089 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+2024-10-21 12:34:15.089 [http-nio-8008-exec-2] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - SecurityContext 'org.springframework.security.core.context.SecurityContextImpl@58e5f4b2: Authentication: {"authorities":["GRANT_CORRECTOR_ALL","GRANT_CORRECTOR_MRU","GRANT_FRAP_ACCESS","GRANT_LIC_CONFIRM_EXPORT","GRANT_LIC_CONFIRM_FILE_READ","GRANT_LIC_CONFIRM_READ","GRANT_LIC_REQUEST_ACCESS","GRANT_LIC_REQUEST_CHECK_ACCESS","GRANT_LIC_REQUEST_CHECK_DELETE","GRANT_LIC_REQUEST_CHECK_FEDERAL_ADD","GRANT_LIC_REQUEST_CHECK_FEDERAL_READ","GRANT_LIC_REQUEST_CHECK_FEDERAL_WRITE","GRANT_LIC_REQUEST_CHECK_MDC_READ","GRANT_LIC_REQUEST_CHECK_OVERRIDE","GRANT_LIC_REQUEST_CHECK_REGION_ADD","GRANT_LIC_REQUEST_CHECK_REGION_READ","GRANT_LIC_REQUEST_CHECK_REGION_WRITE","GRANT_LIC_REQUEST_FEDERAL_ADD","GRANT_LIC_REQUEST_FEDERAL_READ","GRANT_LIC_REQUEST_FEDERAL_WRITE","GRANT_LIC_REQUEST_MDC_ADD","GRANT_LIC_REQUEST_MDC_READ","GRANT_LIC_REQUEST_MDC_WRITE","GRANT_LIC_REQUEST_REGION_ADD","GRANT_LIC_REQUEST_REGION_FILTER","GRANT_LIC_REQUEST_REGION_READ","GRANT_LIC_REQUEST_REGION_WRITE","GRANT_MONITORING_ACCESS","GRANT_REQUEST_INFO_ALL","GRANT_REQUEST_INFO_MRU"],"details":{"firstName":"Подрядчик","lastName":"АО 'ЦЕНТРИНФОРМ'","regionCode":"77","role":"developer","roleid":"12","permissions":"Users,Roles,News,StatisticalInf,Retail,MarketParticipants,Reports,Organizations,ReportTemplates,Retail,Retail,Retail,Retail,Retail","locality":"Москва","listRegionCodes":"77","region":"77","userid":"125","nbf":1729450967,"exp":1729580567,"iss":"CAEgais","aud":"Users"},"authenticated":true,"principal":{"password":"","username":"developer","authorities":["GRANT_CORRECTOR_ALL","GRANT_CORRECTOR_MRU","GRANT_FRAP_ACCESS","GRANT_LIC_CONFIRM_EXPORT","GRANT_LIC_CONFIRM_FILE_READ","GRANT_LIC_CONFIRM_READ","GRANT_LIC_REQUEST_ACCESS","GRANT_LIC_REQUEST_CHECK_ACCESS","GRANT_LIC_REQUEST_CHECK_DELETE","GRANT_LIC_REQUEST_CHECK_FEDERAL_ADD","GRANT_LIC_REQUEST_CHECK_FEDERAL_READ","GRANT_LIC_REQUEST_CHECK_FEDERAL_WRITE","GRANT_LIC_REQUEST_CHECK_MDC_READ","GRANT_LIC_REQUEST_CHECK_OVERRIDE","GRANT_LIC_REQUEST_CHECK_REGION_ADD","GRANT_LIC_REQUEST_CHECK_REGION_READ","GRANT_LIC_REQUEST_CHECK_REGION_WRITE","GRANT_LIC_REQUEST_FEDERAL_ADD","GRANT_LIC_REQUEST_FEDERAL_READ","GRANT_LIC_REQUEST_FEDERAL_WRITE","GRANT_LIC_REQUEST_MDC_ADD","GRANT_LIC_REQUEST_MDC_READ","GRANT_LIC_REQUEST_MDC_WRITE","GRANT_LIC_REQUEST_REGION_ADD","GRANT_LIC_REQUEST_REGION_FILTER","GRANT_LIC_REQUEST_REGION_READ","GRANT_LIC_REQUEST_REGION_WRITE","GRANT_MONITORING_ACCESS","GRANT_REQUEST_INFO_ALL","GRANT_REQUEST_INFO_MRU"],"accountNonExpired":true,"accountNonLocked":true,"credentialsNonExpired":true,"enabled":true,"role":"DEVELOPER","claims":{"firstName":"Подрядчик","lastName":"АО 'ЦЕНТРИНФОРМ'","regionCode":"77","role":"developer","roleid":"12","permissions":"Users,Roles,News,StatisticalInf,Retail,MarketParticipants,Reports,Organizations,ReportTemplates,Retail,Retail,Retail,Retail,Retail","locality":"Москва","listRegionCodes":"77","region":"77","userid":"125","nbf":1729450967,"exp":1729580567,"iss":"CAEgais","aud":"Users"}},"credentials":{"firstName":"Подрядчик","lastName":"АО 'ЦЕНТРИНФОРМ'","regionCode":"77","role":"developer","roleid":"12","permissions":"Users,Roles,News,StatisticalInf,Retail,MarketParticipants,Reports,Organizations,ReportTemplates,Retail,Retail,Retail,Retail,Retail","locality":"Москва","listRegionCodes":"77","region":"77","userid":"125","nbf":1729450967,"exp":1729580567,"iss":"CAEgais","aud":"Users"},"claims":{"firstName":"Подрядчик","lastName":"АО 'ЦЕНТРИНФОРМ'","regionCode":"77","role":"developer","roleid":"12","permissions":"Users,Roles,News,StatisticalInf,Retail,MarketParticipants,Reports,Organizations,ReportTemplates,Retail,Retail,Retail,Retail,Retail","locality":"Москва","listRegionCodes":"77","region":"77","userid":"125","nbf":1729450967,"exp":1729580567,"iss":"CAEgais","aud":"Users"},"permissions":"Users,Roles,News,StatisticalInf,Retail,MarketParticipants,Reports,Organizations,ReportTemplates,Retail,Retail,Retail,Retail,Retail","lastName":"АО 'ЦЕНТРИНФОРМ'","firstName":"Подрядчик","regionCode":"77","locality":"Москва","roleId":"12","effectiveRegionEdit":"77","regionName":"77","role":"DEVELOPER","effectiveRegionView":null,"regionList":"77","userId":"125","name":"developer"}' stored to HttpSession: 'org.apache.catalina.session.StandardSessionFacade@30831c81
+2024-10-21 12:34:15.089 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:postgresql://89.108.103.170:5432;DatabaseName=reportpreprocess
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................4
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+2024-10-21 12:34:15.090 [http-nio-8008-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................4
+2024-10-21 12:34:15.090 [http-nio-8008-exec-2] DEBUG o.s.s.w.a.ExceptionTranslationFilter - Chain processed normally
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
+2024-10-21 12:34:15.090 [http-nio-8008-exec-2] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - SecurityContextHolder now cleared, as request processing completed
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-2"
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
+2024-10-21 12:34:15.090 [http-nio-8008-exec-2] DEBUG o.a.t.util.net.SocketWrapperBase - Socket: [org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper@30181b05:org.apache.tomcat.util.net.NioChannel@3ae07075:java.nio.channels.SocketChannel[connected local=api-lc-license-5c4b7bf9d6-ht2xp/192.168.31.131:8008 remote=/192.168.85.27:52742]], Read from buffer: [0]
+2024-10-21 12:34:15.090 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+2024-10-21 12:34:15.091 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+2024-10-21 12:34:15.091 [http-nio-8008-exec-2] DEBUG o.apache.tomcat.util.net.NioEndpoint - Socket: [org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper@30181b05:org.apache.tomcat.util.net.NioChannel@3ae07075:java.nio.channels.SocketChannel[connected local=api-lc-license-5c4b7bf9d6-ht2xp/192.168.31.131:8008 remote=/192.168.85.27:52742]], Read direct from socket: [0]
+2024-10-21 12:34:15.091 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - username........................"ci"
+2024-10-21 12:34:15.091 [http-nio-8008-exec-2] DEBUG o.a.coyote.http11.Http11Processor - Socket: [org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper@30181b05:org.apache.tomcat.util.net.NioChannel@3ae07075:java.nio.channels.SocketChannel[connected local=api-lc-license-5c4b7bf9d6-ht2xp/192.168.31.131:8008 remote=/192.168.85.27:52742]], Status in: [OPEN_READ], State out: [OPEN]
+2024-10-21 12:34:15.091 [http-nio-8008-exec-3] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+2024-10-21 12:34:15.091 [http-nio-8008-exec-2] DEBUG o.a.coyote.http11.Http11NioProtocol - Pushed Processor [org.apache.coyote.http11.Http11Processor@34279959]
+2024-10-21 12:34:15.091 [http-nio-8008-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-10-21 12:34:15.091 [http-nio-8008-exec-2] DEBUG o.apache.tomcat.util.net.NioEndpoint - Registered read interest for [org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper@30181b05:org.apache.tomcat.util.net.NioChannel@3ae07075:java.nio.channels.SocketChannel[connected local=api-lc-license-5c4b7bf9d6-ht2xp/192.168.31.131:8008 remote=/192.168.85.27:52742]]
+2024-10-21 12:34:15.091 [http-nio-8008-exec-3] WARN  org.postgresql.Driver - JDBC URL must contain a / at the end of the host or port: jdbc:postgresql://89.108.103.170:5432;DatabaseName=reportpreprocess
+2024-10-21 12:34:15.091 [http-nio-8008-exec-3] ERROR r.c.l.exception.BaseException - VolLicAnalyticsRepository.getLicenseCounters() [00059] :: Сбой при получении количества лицензий
+2024-10-21 12:34:15.091 [http-nio-8008-exec-3] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler ru.centerinform.lklicense.controller.CustomExceptionHandler#handleBadRequestException(BadRequestException)
+2024-10-21 12:34:15.091 [http-nio-8008-exec-3] TRACE r.c.l.c.CustomExceptionHandler - handleBadRequestException()
+2024-10-21 12:34:15.091 [http-nio-8008-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Found 'Content-Type:application/json' in response
+2024-10-21 12:34:15.092 [http-nio-8008-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{"message":"VolLicAnalyticsRepository.getLicenseCounters() [00059] :: Сбой при получении количества  (truncated)...]
+2024-10-21 12:34:15.092 [http-nio-8008-exec-3] DEBUG o.s.s.w.h.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@6ab65d30
+2024-10-21 12:34:15.092 [http-nio-8008-exec-3] DEBUG o.s.s.w.c.HttpSessionSecurityContextRepository - SecurityContext 'org.springframework.security.core.context.SecurityContextImpl@58e5f4b2: Authentication: {"authorities":["GRANT_CORRECTOR_ALL","GRANT_CORRECTOR_MRU","GRANT_FRAP_ACCESS","GRANT_LIC_CONFIRM_EXPORT","GRANT_LIC_CONFIRM_FILE_READ","GRANT_LIC_CONFIRM_READ","GRANT_LIC_REQUEST_ACCESS","GRANT_LIC_REQUEST_CHECK_ACCESS","GRANT_LIC_REQUEST_CHECK_DELETE","GRANT_LIC_REQUEST_CHECK_FEDERAL_ADD","GRANT_LIC_REQUEST_CHECK_FEDERAL_READ","GRANT_LIC_REQUEST_CHECK_FEDERAL_WRITE","GRANT_LIC_REQUEST_CHECK_MDC_READ","GRANT_LIC_REQUEST_CHECK_OVERRIDE","GRANT_LIC_REQUEST_CHECK_REGION_ADD","GRANT_LIC_REQUEST_CHECK_REGION_READ","GRANT_LIC_REQUEST_CHECK_REGION_WRITE","GRANT_LIC_REQUEST_FEDERAL_ADD","GRANT_LIC_REQUEST_FEDERAL_READ","GRANT_LIC_REQUEST_FEDERAL_WRITE","GRANT_LIC_REQUEST_MDC_ADD","GRANT_LIC_REQUEST_MDC_READ","GRANT_LIC_REQUEST_MDC_WRITE","GRANT_LIC_REQUEST_REGION_ADD","GRANT_LIC_REQUEST_REGION_FILTER","GRANT_LIC_REQUEST_REGION_READ","GRANT_LIC_REQUEST_REGION_WRITE","GRANT_MONITORING_ACCESS","GRANT_REQUEST_INFO_ALL","GRANT_REQUEST_INFO_MRU"],"details":{"firstName":"Подрядчик","lastName":"АО 'ЦЕНТРИНФОРМ'","regionCode":"77","role":"developer","roleid":"12","permissions":"Users,Roles,News,StatisticalInf,Retail,MarketParticipants,Reports,Organizations,ReportTemplates,Retail,Retail,Retail,Retail,Retail","locality":"Москва","listRegionCodes":"77","region":"77","userid":"125","nbf":1729450967,"exp":1729580567,"iss":"CAEgais","aud":"Users"},"authenticated":true,"principal":{"password":"","username":"developer","authorities":["GRANT_CORRECTOR_ALL","GRANT_CORRECTOR_MRU","GRANT_FRAP_ACCESS","GRANT_LIC_CONFIRM_EXPORT","GRANT_LIC_CONFIRM_FILE_READ","GRANT_LIC_CONFIRM_READ","GRANT_LIC_REQUEST_ACCESS","GRANT_LIC_REQUEST_CHECK_ACCESS","GRANT_LIC_REQUEST_CHECK_DELETE","GRANT_LIC_REQUEST_CHECK_FEDERAL_ADD","GRANT_LIC_REQUEST_CHECK_FEDERAL_READ","GRANT_LIC_REQUEST_CHECK_FEDERAL_WRITE","GRANT_LIC_REQUEST_CHECK_MDC_READ","GRANT_LIC_REQUEST_CHECK_OVERRIDE","GRANT_LIC_REQUEST_CHECK_REGION_ADD","GRANT_LIC_REQUEST_CHECK_REGION_READ","GRANT_LIC_REQUEST_CHECK_REGION_WRITE","GRANT_LIC_REQUEST_FEDERAL_ADD","GRANT_LIC_REQUEST_FEDERAL_READ","GRANT_LIC_REQUEST_FEDERAL_WRITE","GRANT_LIC_REQUEST_MDC_ADD","GRANT_LIC_REQUEST_MDC_READ","GRANT_LIC_REQUEST_MDC_WRITE","GRANT_LIC_REQUEST_REGION_ADD","GRANT_LIC_REQUEST_REGION_FILTER","GRANT_LIC_REQUEST_REGION_READ","GRANT_LIC_REQUEST_REGION_WRITE","GRANT_MONITORING_ACCESS","GRANT_REQUEST_INFO_ALL","GRANT_REQUEST_INFO_MRU"],"accountNonExpired":true,"accountNonLocked":true,"credentialsNonExpired":true,"enabled":true,"role":"DEVELOPER","claims":{"firstName":"Подрядчик","lastName":"АО 'ЦЕНТРИНФОРМ'","regionCode":"77","role":"developer","roleid":"12","permissions":"Users,Roles,News,StatisticalInf,Retail,MarketParticipants,Reports,Organizations,ReportTemplates,Retail,Retail,Retail,Retail,Retail","locality":"Москва","listRegionCodes":"77","region":"77","userid":"125","nbf":1729450967,"exp":1729580567,"iss":"CAEgais","aud":"Users"}},"credentials":{"firstName":"Подрядчик","lastName":"АО 'ЦЕНТРИНФОРМ'","regionCode":"77","role":"developer","roleid":"12","permissions":"Users,Roles,News,StatisticalInf,Retail,MarketParticipants,Reports,Organizations,ReportTemplates,Retail,Retail,Retail,Retail,Retail","locality":"Москва","listRegionCodes":"77","region":"77","userid":"125","nbf":1729450967,"exp":1729580567,"iss":"CAEgais","aud":"Users"},"claims":{"firstName":"Подрядчик","lastName":"АО 'ЦЕНТРИНФОРМ'","regionCode":"77","role":"developer","roleid":"12","permissions":"Users,Roles,News,StatisticalInf,Retail,MarketParticipants,Reports,Organizations,ReportTemplates,Retail,Retail,Retail,Retail,Retail","locality":"Москва","listRegionCodes":"77","region":"77","userid":"125","nbf":1729450967,"exp":1729580567,"iss":"CAEgais","aud":"Users"},"permissions":"Users,Roles,News,StatisticalInf,Retail,MarketParticipants,Reports,Organizations,ReportTemplates,Retail,Retail,Retail,Retail,Retail","lastName":"АО 'ЦЕНТРИНФОРМ'","firstName":"Подрядчик","regionCode":"77","locality":"Москва","roleId":"12","effectiveRegionEdit":"77","regionName":"77","role":"DEVELOPER","effectiveRegionView":null,"regionList":"77","userId":"125","name":"developer"}' stored to HttpSession: 'org.apache.catalina.session.StandardSessionFacade@5d01eba7
+2024-10-21 12:34:15.092 [http-nio-8008-exec-3] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [ru.centerinform.lklicense.exception.BadRequestException: VolLicAnalyticsRepository.getLicenseCounters() [00059] :: Сбой при получении количества лицензий]
+2024-10-21 12:34:15.093 [http-nio-8008-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2024-10-21 12:34:15.093 [http-nio-8008-exec-3] DEBUG o.s.s.w.a.ExceptionTranslationFilter - Chain processed normally
+2024-10-21 12:34:15.093 [http-nio-8008-exec-3] DEBUG o.s.s.w.c.SecurityContextPersistenceFilter - SecurityContextHolder now cleared, as request processing completed
+2024-10-21 12:34:15.093 [http-nio-8008-exec-3] DEBUG o.a.coyote.http11.Http11Processor - Socket: [org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper@10db54b5:org.apache.tomcat.util.net.NioChannel@348bf95f:java.nio.channels.SocketChannel[connected local=api-lc-license-5c4b7bf9d6-ht2xp/192.168.31.131:8008 remote=/192.168.31.180:49502]], Status in: [OPEN_READ], State out: [CLOSED]
+2024-10-21 12:34:15.093 [http-nio-8008-exec-3] DEBUG o.a.coyote.http11.Http11NioProtocol - Pushed Processor [org.apache.coyote.http11.Http11Processor@7b711b85]
+2024-10-21 12:34:15.093 [http-nio-8008-exec-3] DEBUG o.a.tomcat.util.threads.LimitLatch - Counting down[http-nio-8008-exec-3] latch=5
+2024-10-21 12:34:15.093 [http-nio-8008-exec-3] DEBUG o.apache.tomcat.util.net.NioEndpoint - Calling [org.apache.tomcat.util.net.NioEndpoint@31144859].closeSocket([org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper@10db54b5:org.apache.tomcat.util.net.NioChannel@348bf95f:java.nio.channels.SocketChannel[connected local=api-lc-license-5c4b7bf9d6-ht2xp/192.168.31.131:8008 remote=/192.168.31.180:49502]])
 
-    lic-integratos
-    6b75cafc rel 481269
-    #132269  test-circuit  73188546 
-    Evgeniy Serobaba
-pre>
-}}
-<!-- #region(collapsed) [NAME] -->
-* Шаг №1
-{{collapse(Л-902 Заявление о выдаче лицензии ПХПРП_СХП)
-https://lk-test.egais.ru/cabinet/licenses/inProcess/225439
-* Довел до отрицального рещения по экспертизе документов. 
-* Подписал уведомление о необходимости устранения в СЭД дело.
-}}
-<!-- #endregion --> 
-<!-- #region(collapsed) [NAME] -->
-* Шаг №2
-{{collapse(В топик test-smev-leveler-in-response попало сообщение:)
-<!-- #region(collapsed) [JSON] -->
-<pre><code class='json'>
-{
-  "serviceId": "lic-integrator",
-  "requestId": "7336bd13-8f3e-470b-96e1-ee561cfb1ab4",
-  "requestType": "EPGU",
-  "updateTimestamp": "2024-10-11T16:01:47.683+0300",
-  "responseContent": {
-    "serviceStatus": "2005",
-    "caseNumber": "Л-902",
-    "attachments": [
-      {
-        "path": "/mnt/leveler/storage/2024-10-11/72bd8439-87ce-11ef-81b2-da9d2b5bd730/notification.pdf"
-      }
-    ]
-  }
-}
-</code></pre>
-* Подписал на ЕПГУ Заявление об устрании выявленных нарушений
-}}
-<!-- #endregion --> 
-<!-- #region(collapsed) [NAME] -->
-* Шаг №3
-{{collapse(В топик test-smev-leveler-in-request пришло сообщение:)
-<!-- #region(collapsed) [JSON] -->
-<pre><code class='json'>
-{
-  "id": "f22995d6-6c23-49c9-8857-ec0cc8e3fbaa",
-  "serviceId": "lic-integrator",
-  "requestId": "f77943c0-1eca-4fbc-a1de-0038f5c703f2",
-  "requestType": "EPGU",
-  "xsltId": 10,
-  "responseId": "1f7447d6-ec7a-4fae-8bb9-f4f9508e5fa0",
-  "messageId": "cb3daade-87a3-11ef-bc01-e69aa90b6245",
-  "requestContent": {
-    "epgu": {
-      "orderID": "4650041559",
-      "department": "100000012571",
-      "serviceCode": "60009992",
-      "targetCode": "60009992-1",
-      "statementDate": "2024-10-11"
-    },
-    "applicant": {
-      "ip": {
-        "fullName": "",
-        "shortName": "ИП Попова Д. А.",
-        "lastName": "Попова",
-        "firstName": "Дарья",
-        "patronymic": "Алексеевна",
-        "ogrnip": "310730882380772",
-        "inn": "576853595470"
-      },
-      "address": "430013, Респ. Мордовия, г. Саранск, ул. Воинова, 10, 17",
-      "email": "popova-da@fsrar.ru",
-      "phone": "+7(917)5710200"
-    },
-    "agent": {
-      "lastName": "",
-      "firstName": "",
-      "patronymic": "",
-      "documentId": {
-        "serial": "",
-        "number": "",
-        "issuerName": "",
-        "issuerCode": "",
-        "issueDate": ""
-      },
-      "dateOfBirth": "",
-      "email": "",
-      "phone": ""
-    },
-    "grant": {
-      "subdivisions": [
-        {
-          "kpp": "",
-          "address": "77:77:1111111:7777",
-          "cadastralNumbers": {
-            "warehouses": [
-              {
-                "warehouse": "77:77:1111111:7777"
-              }
-            ]
-          },
-          "parties": "",
-          "subject": "",
-          "startDate": "",
-          "endDate": "",
-          "equipment": "",
-          "products": {
-            "productNames": [
-              {
-                "productName": "вино"
-              }
-            ],
-            "productNameText": ""
-          },
-          "kppHardwareTS": "",
-          "addressHardwareTS": ""
-        }
-      ],
-      "license": {
-        "numOfYears": "4",
-        "numOfMonths": "",
-        "kindOfActivity": "Производство, хранение и поставки произведённой сельскохозяйственными производителями винодельческой продукции",
-        "kindOfWork": ""
-      },
-      "laboratory": {
-        "certificate": "1",
-        "parties": "",
-        "subject": "",
-        "startDate": "",
-        "endDate": ""
-      },
-      "bank": {
-        "name": "",
-        "account": ""
-      },
-      "payment": {
-        "number": "1",
-        "date": "2024-10-11",
-        "amount": "",
-        "purpose": ""
-      },
-      "uin": {
-        "number": "",
-        "date": ""
-      },
-      "vineyards": [
-        {
-          "cadastralNumber": "77:77:1111111:7777",
-          "registrationNumber": "77:77:1111111:7777",
-          "parties": "",
-          "subject": "",
-          "startDate": "",
-          "endDate": ""
-        }
-      ]
-    },
-    "appliedDocuments": [
-      {
-        "name": "7841051711_86250.pdf",
-        "businessName": "Документ, подтверждающий статус сельскохозяйственного товаропроизводителя",
-        "type": "application/pdf",
-        "mnemonic": "c181.FileUploadComponent.status_selhoz.4650041559"
-      }
-    ]
-  },
-  "requestTimestamp": "2024-10-11T10:39:58.304+0300",
-  "updateTimestamp": "2024-10-11T10:39:58.866+0300",
-  "kafkaPartition": 0,
-  "kafkaOffset": 0,
-  "route": "IN",
-  "attachmentPath": "/mnt/leveler/storage/2024-10-11/cb3daade-87a3-11ef-bc01-e69aa90b6245/Application.zip",
-  "state": "OUTGOING",
-  "archivedStatus": true,
-  "queuedStatus": true
-}
 </code></pre>
 <!-- #endregion --> 
 }}
-<!-- #endregion --> 
